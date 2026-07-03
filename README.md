@@ -86,23 +86,31 @@ http://localhost:8080
 ## Estrutura de Pastas Principal
 
 ```plaintext
-├── .github/                 # Configurações de CI/CD (Opcional)
-├── docker-compose.yml        # Orquestração dos containers (App + Redis)
-├── Dockerfile                # Instruções de build da imagem Docker do Spring
-├── pom.xml                   # Dependências do Maven
-└── src/
-    └── main/
-        ├── java/com/exemplo/tictactoe/
-        │   ├── config/       # Configurações de WebSocket e Cache
-        │   ├── controller/   # Endpoints REST e Message Mappings (WebSocket)
-        │   ├── model/        # Entidades do jogo (Game, Player, Board)
-        │   └── service/      # Lógica de negócio e regras do Jogo da Velha
-        └── resources/
-            ├── application.properties # Configurações do Spring
-            └── static/       # Frontend da aplicação (HTML, CSS, JS)
-                ├── css/
-                ├── js/
-                └── index.html
+├── backend/
+│   ├── Dockerfile                 # Instruções de build da imagem Docker do backend Spring
+│   ├── pom.xml                    # Dependências e configurações do Maven
+│   └── src/
+│       └── main/
+│           └── java/
+│               └── com/
+│                   └── example/
+│                       └── api/
+│                           ├── config/        # Configurações da aplicação, WebSocket, CORS, Cache etc.
+│                           ├── controller/    # Endpoints REST e Message Mappings do WebSocket
+│                           ├── dto/           # Objetos de transferência de dados
+│                           ├── exception/     # Tratamento de exceções da aplicação
+│                           ├── model/         # Entidades e modelos do jogo
+│                           ├── repository/    # Camada de acesso a dados
+│                           ├── service/       # Regras de negócio e lógica do jogo
+│                           └── ApiApplication.java # Classe principal da aplicação Spring Boot
+│
+├── frontend/
+│   ├── index.html                 # Página principal da aplicação
+│   ├── scripts/                   # Arquivos JavaScript do frontend
+│   └── style.css                  # Estilos da aplicação
+│
+├── docker-compose.yml             # Orquestração dos containers da aplicação
+└── README.md                      # Documentação do projeto
 ```
 
 ---
