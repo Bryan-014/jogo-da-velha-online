@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo da Velha</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div id="header">
+        <h1>Jogo da Velha Online</h1>
+    </div>
+
+    <main id="game-container">
+        <section id="lobby-container">
+            <div class="lobby-card join-card">
+                <span class="lobby-label">Entrar em uma partida</span>
+
+                <div class="join-form">
+                    <input
+                        id="game-code-input"
+                        type="text"
+                        placeholder="Código"
+                        maxlength="6"
+                    />
+
+                    <button id="join-game-btn">Entrar</button>
+                </div>
+            </div>
+
+            <div class="lobby-card info-card">
+                <span class="lobby-label">Informações da partida</span>
+                <div id="game-info">
+                    Nenhuma partida iniciada
+                </div>
+            </div>
+
+            <div class="lobby-card create-card">
+                <span class="lobby-label">Criar uma nova partida</span>
+                <button id="create-game-btn">Criar jogo</button>
+            </div>
+        </section>
+
+        <section id="status-container">
+            <span id="status-text">Crie um jogo ou entre com um código.</span>
+            <button id="reset-btn">Reiniciar Partida</button>
+        </section>
+
+        <div class="board" id="board">
+            <div id="winning-line" class="winning-line"></div>
+
+            <div id="cell-0-0" class="cell"></div>
+            <div id="cell-0-1" class="cell"></div>
+            <div id="cell-0-2" class="cell"></div>
+            <div id="cell-1-0" class="cell"></div>
+            <div id="cell-1-1" class="cell"></div>
+            <div id="cell-1-2" class="cell"></div>
+            <div id="cell-2-0" class="cell"></div>
+            <div id="cell-2-1" class="cell"></div>
+            <div id="cell-2-2" class="cell"></div>
+        </div>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/sockjs-client@1/dist/sockjs.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@stomp/stompjs@7/bundles/stomp.umd.min.js"></script>
+    <script src="./script.js"></script>
+</body>
+</html>
